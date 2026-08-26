@@ -538,6 +538,10 @@
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         关于
       </a>
+          <a href="donate.html">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        捐赠
+      </a>
     </nav>
 
     <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
@@ -553,6 +557,8 @@
         <li><a href="index.html" class="active"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V9.5z"/></svg>首页</a></li>
         <li><a href="download.html"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>下载</a></li>
         <li><a href="about.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>关于</a></li>
+      
+        <li><a href="donate.html"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>捐赠</a></li>
       </ul>
       <div class="mobile-menu-cta">
         <a href="https://1860128748.share.123pan.cn/123pan/OP5zvd-e8YKd" target="_blank" class="btn btn-primary">
@@ -571,14 +577,14 @@
       <h1 class="hero-title">元匣工具箱</h1>
       <p class="hero-subtitle">YuanXia · 全能手机工具箱</p>
       <p class="hero-desc">
-        涵盖 200+ 实用工具，10 大分类，从日常计算到专业开发，应有尽有。
+        涵盖 120+ 实用工具，12 大分类，从日常计算到专业开发，应有尽有。
       </p>
       <div class="hero-buttons">
         <a href="download.html" class="btn btn-primary">
           <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           立即下载
         </a>
-        <a href="about.html" class="btn btn-secondary">
+        <a href="https://qm.qq.com/q/RrQKmvZGo2" target="_blank" rel="noopener" class="btn btn-secondary">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 10h.01M16 10h.01M9 15c.83.83 2.17.83 3 0M12 15c.83.83 2.17.83 3 0" stroke-linecap="round"/></svg>
           QQ交流
         </a>
@@ -667,7 +673,7 @@
           <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
         </div>
         <div class="tool-info">
-          <h4>音乐大全</h4>
+          <h4>音乐聚合</h4>
           <p>多平台音乐搜索与免费下载</p>
         </div>
       </div>
@@ -742,6 +748,7 @@
       <a href="index.html">首页</a>
       <a href="download.html">下载</a>
       <a href="about.html">关于</a>
+      <a href="donate.html">捐赠支持</a>
       <a href="about.html#faq">常见问题</a>
       <a href="about.html#contact">联系我们</a>
       <a href="about.html#privacy">隐私政策</a>
@@ -789,97 +796,7 @@
   });
 
   // ========== Anti-watermark removal ==========
-  (function() {
-    var keywords = ['豆包', 'Doubao', 'doubao', 'AI生成', 'AI 生成', 'Powered by', 'powered by', '妙搭', 'MiaoDa', 'miaoda'];
-    var classKeywords = ['watermark', 'doubao', 'powered-by', 'powered_by', 'ai-badge', 'ai_badge', 'aibadge', 'badge'];
 
-    function isWatermark(el) {
-      if (!el || el.nodeType !== 1) return false;
-      if (el.id === 'navToggle' || el.id === 'mobileMenu' || el.classList.contains('navbar') || el.classList.contains('footer') || el.tagName === 'SCRIPT' || el.tagName === 'STYLE' || el.tagName === 'LINK' || el.tagName === 'META') return false;
-
-      try {
-        var style = window.getComputedStyle(el);
-        if (!style) return false;
-        var pos = style.position;
-        if (pos !== 'fixed') return false;
-
-        var bottom = parseFloat(style.bottom) || 0;
-        var right = parseFloat(style.right) || 0;
-        var left = parseFloat(style.left) || 0;
-        var isBottomCorner = (bottom >= 0 && bottom < 120) && (right >= 0 && right < 200 || left >= 0 && left < 200);
-        if (!isBottomCorner) return false;
-
-        var txt = (el.textContent || '').trim();
-        for (var i = 0; i < keywords.length; i++) {
-          if (txt.indexOf(keywords[i]) !== -1) return true;
-        }
-        var cid = (el.className || '') + ' ' + (el.id || '');
-        for (var j = 0; j < classKeywords.length; j++) {
-          if (cid.toLowerCase().indexOf(classKeywords[j]) !== -1) return true;
-        }
-        var imgs = el.querySelectorAll('img');
-        for (var k = 0; k < imgs.length; k++) {
-          var alt = (imgs[k].alt || '') + (imgs[k].title || '');
-          for (var m = 0; m < keywords.length; m++) {
-            if (alt.indexOf(keywords[m]) !== -1) return true;
-          }
-        }
-      } catch(e) {}
-      return false;
-    }
-
-    function purgeWatermarks(root) {
-      root = root || document.body;
-      if (!root) return;
-      var all = root.querySelectorAll('*');
-      for (var i = 0; i < all.length; i++) {
-        if (isWatermark(all[i])) {
-          all[i].parentNode && all[i].parentNode.removeChild(all[i]);
-        }
-      }
-      var iframes = root.querySelectorAll('iframe');
-      for (var j = 0; j < iframes.length; j++) {
-        try {
-          var idoc = iframes[j].contentDocument || iframes[j].contentWindow.document;
-          if (idoc) purgeWatermarks(idoc.body);
-        } catch(e) {}
-      }
-      for (var k = 0; k < all.length; k++) {
-        try {
-          if (all[k].shadowRoot) purgeWatermarks(all[k].shadowRoot);
-        } catch(e) {}
-      }
-    }
-
-    function runPurge() { purgeWatermarks(document); }
-
-    document.addEventListener('DOMContentLoaded', runPurge);
-    window.addEventListener('load', runPurge);
-    runPurge();
-
-    var observer = new MutationObserver(function(mutations) {
-      for (var i = 0; i < mutations.length; i++) {
-        var added = mutations[i].addedNodes;
-        for (var j = 0; j < added.length; j++) {
-          if (added[j].nodeType === 1) {
-            if (isWatermark(added[j])) {
-              added[j].parentNode && added[j].parentNode.removeChild(added[j]);
-            } else {
-              purgeWatermarks(added[j]);
-            }
-          }
-        }
-      }
-    });
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-
-    var count = 0;
-    var interval = setInterval(function() {
-      runPurge();
-      count++;
-      if (count >= 30) clearInterval(interval);
-    }, 500);
-  })();
 </script>
 </body>
 </html>

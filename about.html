@@ -131,6 +131,10 @@
       <a href="index.html"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V9.5z"/></svg>首页</a>
       <a href="download.html"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>下载</a>
       <a href="about.html" class="active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>关于</a>
+          <a href="donate.html">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        捐赠
+      </a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
       <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -143,6 +147,8 @@
         <li><a href="index.html"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1V9.5z"/></svg>首页</a></li>
         <li><a href="download.html"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>下载</a></li>
         <li><a href="about.html" class="active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>关于</a></li>
+      
+        <li><a href="donate.html"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>捐赠</a></li>
       </ul>
       <div class="mobile-menu-cta">
         <a href="https://1860128748.share.123pan.cn/123pan/OP5zvd-e8YKd" target="_blank" class="btn btn-primary">
@@ -163,7 +169,7 @@
     <div class="about-intro">
       <p>元匣工具箱是一款专为 Android 用户打造的全能手机工具箱应用，汇聚了十二大功能类目，全面覆盖日常娱乐场景与实用工具类的各类使用需求。</p>
       <p>我们的愿景是做一款真正好用、纯粹的工具箱 App —— 没有弹窗广告、没有强制推广、没有会员付费，让每一位用户都能轻松找到自己需要的工具，让手机使用变得更高效、更愉悦。</p>
-      <p>元匣工具箱坚持社区驱动的开发模式，认真对待每一条用户反馈，每周持续更新迭代。你的每一个建议，都是我们前进的动力。</p>
+      <p>元匣工具箱坚持社区驱动的开发模式，认真对待每一条用户反馈，每持续更新迭代。你的每一个建议，都是我们前进的动力。</p>
     </div>
   </div>
 </section>
@@ -242,6 +248,7 @@
   <div class="container">
     <div class="footer-links">
       <a href="index.html">首页</a><a href="download.html">下载</a><a href="about.html">关于</a>
+      <a href="donate.html">捐赠支持</a>
       <a href="#faq">常见问题</a><a href="#contact">联系我们</a><a href="#privacy">隐私政策</a>
     </div>
     <div class="footer-copy">© 2026 元匣工具箱. All rights reserved.</div>
@@ -265,51 +272,7 @@
     }
   });
   window.addEventListener('resize', function() { if (window.innerWidth > 768) { closeMobileMenu(); } });
-  (function() {
-    var keywords = ['豆包', 'Doubao', 'doubao', 'AI生成', 'AI 生成', 'Powered by', 'powered by', '妙搭', 'MiaoDa', 'miaoda'];
-    var classKeywords = ['watermark', 'doubao', 'powered-by', 'powered_by', 'ai-badge', 'ai_badge', 'aibadge', 'badge'];
-    function isWatermark(el) {
-      if (!el || el.nodeType !== 1) return false;
-      if (el.id === 'navToggle' || el.id === 'mobileMenu' || el.classList.contains('navbar') || el.classList.contains('footer') || el.tagName === 'SCRIPT' || el.tagName === 'STYLE' || el.tagName === 'LINK' || el.tagName === 'META') return false;
-      try {
-        var style = window.getComputedStyle(el); if (!style) return false;
-        if (style.position !== 'fixed') return false;
-        var bottom = parseFloat(style.bottom) || 0; var right = parseFloat(style.right) || 0; var left = parseFloat(style.left) || 0;
-        var isBottomCorner = (bottom >= 0 && bottom < 120) && (right >= 0 && right < 200 || left >= 0 && left < 200);
-        if (!isBottomCorner) return false;
-        var txt = (el.textContent || '').trim();
-        for (var i = 0; i < keywords.length; i++) { if (txt.indexOf(keywords[i]) !== -1) return true; }
-        var cid = (el.className || '') + ' ' + (el.id || '');
-        for (var j = 0; j < classKeywords.length; j++) { if (cid.toLowerCase().indexOf(classKeywords[j]) !== -1) return true; }
-        var imgs = el.querySelectorAll('img');
-        for (var k = 0; k < imgs.length; k++) {
-          var alt = (imgs[k].alt || '') + (imgs[k].title || '');
-          for (var m = 0; m < keywords.length; m++) { if (alt.indexOf(keywords[m]) !== -1) return true; }
-        }
-      } catch(e) {}
-      return false;
-    }
-    function purgeWatermarks(root) {
-      root = root || document.body; if (!root) return;
-      var all = root.querySelectorAll('*');
-      for (var i = 0; i < all.length; i++) { if (isWatermark(all[i])) { all[i].parentNode && all[i].parentNode.removeChild(all[i]); } }
-      var iframes = root.querySelectorAll('iframe');
-      for (var j = 0; j < iframes.length; j++) { try { var idoc = iframes[j].contentDocument || iframes[j].contentWindow.document; if (idoc) purgeWatermarks(idoc.body); } catch(e) {} }
-      for (var k = 0; k < all.length; k++) { try { if (all[k].shadowRoot) purgeWatermarks(all[k].shadowRoot); } catch(e) {} }
-    }
-    function runPurge() { purgeWatermarks(document); }
-    document.addEventListener('DOMContentLoaded', runPurge); window.addEventListener('load', runPurge); runPurge();
-    var observer = new MutationObserver(function(mutations) {
-      for (var i = 0; i < mutations.length; i++) {
-        var added = mutations[i].addedNodes;
-        for (var j = 0; j < added.length; j++) {
-          if (added[j].nodeType === 1) { if (isWatermark(added[j])) { added[j].parentNode && added[j].parentNode.removeChild(added[j]); } else { purgeWatermarks(added[j]); } }
-        }
-      }
-    });
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-    var count = 0; var interval = setInterval(function() { runPurge(); count++; if (count >= 30) clearInterval(interval); }, 500);
-  })();
+
   document.querySelectorAll('.faq-question').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var item = btn.parentElement; var wasOpen = item.classList.contains('open');
